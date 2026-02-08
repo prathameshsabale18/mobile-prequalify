@@ -15,295 +15,241 @@
         body { 
             font-family: 'Poppins', sans-serif; 
             margin: 0;
-            background-color: #F3F4F6;
+            background-color: #FFFFFF;
             color: var(--text-gray);
         }
         
-        @media (min-width: 1281px) {
-            .artboard {
-                width: 1280px;
-                height: 1023px;
-                margin: 0 auto;
-                position: relative;
-                background: white;
-                overflow: hidden;
-            }
-            .header-nav {
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                width: 1280px;
-                height: 52px;
-                padding: 0 40px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                border-bottom: 1px solid #E5E7EB;
-            }
-            .content-group {
-                position: absolute;
-                top: 126px;
-                left: 244px;
-                width: 793px;
-                height: 624px;
-                display: flex;
-                gap: 51px;
-            }
-            .footer-section {
-                position: absolute;
-                top: 903px;
-                left: 0px;
-                width: 1280px;
-                height: 120px;
-                padding: 0 40px;
-                background: #FFFFFF;
-                border-top: 1px solid #F3F4F6;
-            }
+        /* Updated Navigation Bar from autobon-sooty.vercel.app */
+        .header-nav {
+            width: 100%;
+            height: 80px; /* Standard Vercel site height */
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            border-bottom: 1px solid #f3f4f6;
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
 
-        @media (max-width: 1280px) {
-            .artboard { width: 100%; background: white; min-height: 100vh; }
-            .header-nav { padding: 12px 20px; border-bottom: 1px solid #E5E7EB; display: flex; justify-content: space-between; align-items: center; }
-            .content-group { padding: 40px 20px; display: flex; flex-direction: column; gap: 32px; align-items: center; }
-            .footer-section { padding: 40px 20px; background: #FAFAFA; border-top: 1px solid #EEE; }
-            .hide-mobile { display: none; }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #111827;
+        }
+
+        /* Form Container */
+        .content-wrapper {
+            max-width: 1280px;
+            margin: 60px auto 100px;
+            padding: 0 24px;
+            display: flex;
+            justify-content: center;
+            gap: 80px;
         }
 
         .form-container {
             border: 1px solid #BFDBFE;
             border-radius: 16px;
-            padding: 28px;
+            padding: 32px;
             background: white;
             box-shadow: 0 10px 30px rgba(37, 99, 235, 0.03);
+            width: 450px;
         }
+
         .input-field {
             width: 100%;
             border: 1px solid #D1D5DB;
-            border-radius: 6px;
-            padding: 10px 12px;
-            font-size: 13px;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 14px;
             outline: none;
             transition: all 0.2s;
-            background-color: white;
         }
-        .input-field:focus { 
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+
+        .input-field:focus { border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+        .label-text { font-size: 12px; color: #6B7280; margin-bottom: 6px; display: block; font-weight: 500; }
+
+        /* Comprehensive Footer from autobon-sooty.vercel.app */
+        .footer-main {
+            background-color: #f9fafb;
+            padding: 80px 5% 40px;
+            border-top: 1px solid #e5e7eb;
         }
-        .label-text { font-size: 11px; color: var(--label-gray); margin-bottom: 4px; display: block; }
-        
-        select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 14px;
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 20px;
+        }
+
+        .footer-column a {
+            display: block;
+            font-size: 13px;
+            color: #4b5563;
+            margin-bottom: 12px;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover { color: var(--primary-blue); }
+
+        .footer-bottom {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 1024px) {
+            .content-wrapper { flex-direction: column; align-items: center; gap: 40px; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="artboard">
-        <header class="header-nav bg-white z-10">
-            <div class="text-[22px] font-bold text-blue-600">Autobon</div>
-            <div class="flex items-center gap-5">
-                <div class="relative hide-mobile">
-                    <span class="absolute left-3 top-2.5 text-blue-500 text-xs">🔍</span>
-                    <input type="text" placeholder="Search here..." class="pl-9 pr-4 py-2 bg-gray-100 rounded-lg w-56 text-[11px]">
-                </div>
-                <div class="flex items-center gap-1.5 text-[12px] font-medium cursor-pointer">
-                    <img src="https://flagcdn.com/w20/us.png" class="w-4"> Eng (US) <span class="text-[8px]">▼</span>
-                </div>
-                <div class="flex items-center gap-3 border-l pl-5">
-                    <div class="text-right leading-tight hide-mobile">
-                        <p class="text-[12px] font-semibold">Irina</p>
-                        <p class="text-[10px] text-gray-400 uppercase">Admin</p>
-                    </div>
-                    <img src="https://i.pravatar.cc/150?u=irina" class="w-9 h-9 rounded-full cursor-pointer">
-                    <span class="text-[8px] text-gray-400">▼</span>
-                </div>
-            </div>
-        </header>
+    <header class="header-nav">
+        <div class="flex items-center gap-8">
+            <div class="text-[24px] font-bold text-blue-600">Autobon</div>
+            <nav class="nav-links">
+                <a href="#">Buy Cars</a>
+                <a href="#">Sell or Trade</a>
+                <a href="#">Financing</a>
+            </nav>
+        </div>
+        <div class="flex items-center gap-6">
+            <button class="text-sm font-semibold text-gray-700">Sign In</button>
+            <button class="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all">Get Started</button>
+        </div>
+    </header>
 
-        <main class="content-group">
-            <div class="lg:w-[320px] pt-2">
-                <h1 class="text-[36px] font-bold leading-[1.15] text-[#374151]">
-                    Pre-qualify for a car loan in <br>
-                    <span class="text-blue-600">minutes</span>
-                </h1>
-                <p class="text-[15px] text-gray-500 mt-4 font-normal">No impact on your credit score</p>
-            </div>
+    <main class="content-wrapper">
+        <div class="max-w-[400px]">
+            <h1 class="text-[42px] font-bold leading-[1.1] text-[#111827]">
+                Pre-qualify for a car loan in <span class="text-blue-600">minutes</span>
+            </h1>
+            <p class="text-lg text-gray-500 mt-6">No impact on your credit score. Transparent and simple.</p>
+        </div>
 
-            <div class="form-container lg:w-[422px]">
-                <p class="text-[11px] font-bold text-gray-600 mb-5 leading-tight">
-                    <span class="text-black">IMPORTANT:</span> Name & address must match your government issued ID to get an accurate result.
-                </p>
+        <div class="form-container">
+            <p class="text-[11px] font-bold text-gray-400 mb-6 uppercase tracking-wider">
+                <span class="text-gray-900">IMPORTANT:</span> Details must match your Government ID.
+            </p>
 
-                <form id="preQualifyForm" onsubmit="handleSubmit(event)" class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="label-text">First Name</label>
-                            <input type="text" name="firstName" required class="input-field">
-                        </div>
-                        <div>
-                            <label class="label-text">Last Name</label>
-                            <input type="text" name="lastName" required class="input-field">
-                        </div>
-                    </div>
-
+            <form id="preQualifyForm" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="label-text">Date of Birth</label>
-                        <div class="grid grid-cols-3 gap-3">
-                            <select id="dobMonth" name="dobMonth" required class="input-field">
-                                <option value="" disabled selected>Month</option>
-                            </select>
-                            <select id="dobDay" name="dobDay" required class="input-field">
-                                <option value="" disabled selected>Day</option>
-                            </select>
-                            <select id="dobYear" name="dobYear" required class="input-field">
-                                <option value="" disabled selected>Year</option>
-                            </select>
-                        </div>
+                        <label class="label-text">First Name</label>
+                        <input type="text" class="input-field" required>
                     </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="label-text leading-3">Total Gross Annual Income (before tax)</label>
-                            <div class="relative mt-1">
-                                <span class="absolute left-3 top-2.5 text-gray-400 text-sm">$</span>
-                                <input type="number" name="annualIncome" required class="input-field pl-6" placeholder="0">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="label-text leading-3">Monthly Rent or Mortgage Payment</label>
-                            <div class="relative mt-1">
-                                <span class="absolute left-3 top-2.5 text-gray-400 text-sm">$</span>
-                                <input type="number" name="monthlyRent" required class="input-field pl-6" placeholder="0">
-                            </div>
-                        </div>
-                    </div>
-
                     <div>
-                        <label class="label-text">Street address</label>
-                        <input type="text" name="streetAddress" required class="input-field">
+                        <label class="label-text">Last Name</label>
+                        <input type="text" class="input-field" required>
                     </div>
+                </div>
 
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="label-text">Suite, unit (optional)</label>
-                            <input type="text" name="unit" class="input-field">
-                        </div>
-                        <div>
-                            <label class="label-text">City</label>
-                            <input type="text" name="city" required class="input-field">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="label-text">Province</label>
-                            <input type="text" name="province" required class="input-field">
-                        </div>
-                        <div>
-                            <label class="label-text">Postal Code</label>
-                            <input type="text" name="postalCode" required class="input-field">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="label-text">Annual Income</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-3.5 text-gray-400">$</span>
+                            <input type="text" id="incomeInput" placeholder="0" class="input-field pl-7 income-format" required>
                         </div>
                     </div>
-
-                    <div class="flex items-start gap-3 pt-1">
-                        <input type="checkbox" required class="mt-1 w-4 h-4 border-gray-300 rounded cursor-pointer">
-                        <p class="text-[10px] text-gray-500 leading-normal">I confirm the data above is accurate and consent to Autobon's Terms of Service.</p>
+                    <div>
+                        <label class="label-text">Monthly Payment</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-3.5 text-gray-400">$</span>
+                            <input type="text" id="rentInput" placeholder="0" class="input-field pl-7 income-format" required>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="pt-2">
-                        <button type="submit" id="submitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-lg text-[14px] shadow-lg shadow-blue-200 transition-all active:scale-[0.98]">
-                            Continue
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </main>
-
-        <footer class="footer-section">
-            <div class="h-full flex flex-col lg:flex-row items-center justify-between py-6">
                 <div>
-                    <p class="text-[10px] text-gray-400 max-w-[500px]">
-                        Copyright © 2025 Autobon. All rights reserved.
-                    </p>
+                    <label class="label-text">Street Address</label>
+                    <input type="text" class="input-field" required>
                 </div>
-                <div class="flex items-center gap-4">
-                    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" class="h-5">
-                    <div class="flex flex-col items-center">
-                        <div class="text-yellow-400 text-sm">★★★★★</div>
-                        <p class="text-[8px] font-extrabold text-gray-500 uppercase">2500+ Reviews</p>
-                    </div>
-                </div>
+
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl text-[16px] mt-4 hover:bg-blue-700 shadow-xl shadow-blue-100 transition-all">
+                    Continue Application
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer-main">
+        <div class="footer-grid">
+            <div class="footer-column col-span-2">
+                <div class="text-[20px] font-bold text-blue-600 mb-4">Autobon</div>
+                <p class="text-sm text-gray-500 max-w-xs">The best car deals in Canada. Shop nationwide inventory with zero pressure and free delivery.</p>
             </div>
-        </footer>
-    </div>
+            <div class="footer-column">
+                <h4>Browse Models</h4>
+                <a href="#">Honda Civic</a>
+                <a href="#">Toyota Corolla</a>
+                <a href="#">Tesla Model 3</a>
+                <a href="#">Toyota RAV4</a>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies</a>
+                <a href="#">Disclaimer</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 AUTOBON. All Rights Reserved.</p>
+            <div class="flex gap-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg" class="h-5 grayscale opacity-50">
+                <span>5.0 Star Rating</span>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        const monthSelect = document.getElementById('dobMonth');
-        const daySelect = document.getElementById('dobDay');
-        const yearSelect = document.getElementById('dobYear');
-
-        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-        function populateDays() {
-            const selectedMonth = parseInt(monthSelect.value);
-            const selectedYear = parseInt(yearSelect.value);
-            const currentDayValue = daySelect.value;
-
-            daySelect.innerHTML = '<option value="" disabled selected>Day</option>';
-
-            if (!selectedMonth) return;
-
-            // Logic for calculating days in month
-            // February leap year check: (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)
-            const daysInMonth = new Date(selectedYear || 2000, selectedMonth, 0).getDate();
-
-            for (let d = 1; d <= daysInMonth; d++) {
-                let opt = document.createElement('option');
-                opt.value = d;
-                opt.innerHTML = d;
-                if (d == currentDayValue) opt.selected = true;
-                daySelect.appendChild(opt);
-            }
-        }
-
-        window.onload = function() {
-            // Populate Months
-            months.forEach((m, i) => {
-                let opt = document.createElement('option');
-                opt.value = i + 1;
-                opt.innerHTML = m;
-                monthSelect.appendChild(opt);
+        // Dollar Comma Logic
+        document.querySelectorAll('.income-format').forEach(input => {
+            input.addEventListener('input', function(e) {
+                // Remove non-digit characters
+                let value = e.target.value.replace(/\D/g, '');
+                
+                // Format with commas
+                if (value) {
+                    e.target.value = Number(value).toLocaleString('en-US');
+                } else {
+                    e.target.value = '';
+                }
             });
+        });
 
-            // Populate Years (18+ only)
-            const currentYear = new Date().getFullYear();
-            for (let y = currentYear - 18; y >= 1950; y--) {
-                let opt = document.createElement('option');
-                opt.value = y;
-                opt.innerHTML = y;
-                yearSelect.appendChild(opt);
-            }
-
-            monthSelect.addEventListener('change', populateDays);
-            yearSelect.addEventListener('change', populateDays);
-        };
-
-        function handleSubmit(event) {
-            event.preventDefault();
-            const btn = document.getElementById('submitBtn');
-            btn.innerHTML = "Processing...";
-            btn.disabled = true;
-            setTimeout(() => {
-                alert("Application sent successfully!");
-                btn.innerHTML = "Continue";
-                btn.disabled = false;
-            }, 1000);
-        }
+        document.getElementById('preQualifyForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form submitted successfully!');
+        });
     </script>
 </body>
 </html>
