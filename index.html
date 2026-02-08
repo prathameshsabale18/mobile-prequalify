@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autobon | Pre-qualify</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2563EB;
+            --text-gray: #374151;
+            --label-gray: #9CA3AF;
+        }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            margin: 0;
+            background-color: #F3F4F6;
+            color: var(--text-gray);
+        }
+        
+        /* Pixel-Perfect Desktop Canvas */
+        @media (min-width: 1281px) {
+            .artboard {
+                width: 1280px;
+                height: 1023px; /* Height determined by footer Y + footer height */
+                margin: 0 auto;
+                position: relative;
+                background: white;
+                overflow: hidden;
+            }
+            .header-nav {
+                position: absolute;
+                top: 0px; /* */
+                left: 0px; /* */
+                width: 1280px; /* */
+                height: 52px; /* */
+                padding: 0 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid #E5E7EB;
+            }
+            .content-group {
+                position: absolute;
+                top: 126px; /* */
+                left: 244px; /* */
+                width: 793px; /* */
+                height: 624px; /* */
+                display: flex;
+                gap: 51px; /* */
+            }
+            .footer-section {
+                position: absolute;
+                top: 903px; /* */
+                left: 0px; /* */
+                width: 1280px;
+                height: 120px; /* */
+                padding: 0 40px;
+                background: #FFFFFF;
+                border-top: 1px solid #F3F4F6;
+            }
+        }
+
+        /* Mobile Responsive Layer */
+        @media (max-width: 1280px) {
+            .artboard { width: 100%; background: white; min-height: 100vh; }
+            .header-nav { padding: 12px 20px; border-bottom: 1px solid #E5E7EB; display: flex; justify-content: space-between; align-items: center; }
+            .content-group { padding: 40px 20px; display: flex; flex-direction: column; gap: 32px; align-items: center; }
+            .footer-section { padding: 40px 20px; background: #FAFAFA; border-top: 1px solid #EEE; }
+            .hide-mobile { display: none; }
+        }
+
+        .form-container {
+            border: 1px solid #BFDBFE;
+            border-radius: 16px;
+            padding: 28px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.03);
+        }
+        .input-field {
+            width: 100%;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .input-field:focus { border-color: var(--primary-blue); }
+        .label-text { font-size: 11px; color: var(--label-gray); margin-bottom: 4px; display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="artboard">
+        <header class="header-nav">
+            <div class="text-[22px] font-bold text-blue-600">Autobon</div>
+            <div class="flex items-center gap-5">
+                <div class="relative hide-mobile">
+                    <span class="absolute left-3 top-2.5 text-blue-500 text-xs">🔍</span>
+                    <input type="text" placeholder="Search here..." class="pl-9 pr-4 py-2 bg-gray-100 rounded-lg w-56 text-[11px]">
+                </div>
+                <div class="flex items-center gap-1.5 text-[12px] font-medium">
+                    <img src="https://flagcdn.com/w20/us.png" class="w-4"> Eng (US) <span class="text-[8px]">▼</span>
+                </div>
+                <div class="flex items-center gap-3 border-l pl-5">
+                    <div class="text-right leading-tight hide-mobile">
+                        <p class="text-[12px] font-semibold">Irina</p>
+                        <p class="text-[10px] text-gray-400 uppercase">Admin</p>
+                    </div>
+                    <img src="https://i.pravatar.cc/150?u=irina" class="w-9 h-9 rounded-full">
+                    <span class="text-[8px] text-gray-400">▼</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="content-group">
+            <div class="lg:w-[320px] pt-2">
+                <h1 class="text-[36px] font-bold leading-[1.15] text-[#374151]">
+                    Pre-qualify for a car loan in <br>
+                    <span class="text-blue-600">minutes</span>
+                </h1>
+                <p class="text-[15px] text-gray-500 mt-4 font-normal">No impact on your credit score</p>
+            </div>
+
+            <div class="form-container lg:w-[422px]">
+                <p class="text-[11px] font-bold text-gray-600 mb-5 leading-tight">
+                    <span class="text-black">IMPORTANT:</span> Name & address must match your government issued ID to get an accurate result.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="label-text">First Name</label>
+                            <input type="text" class="input-field">
+                        </div>
+                        <div>
+                            <label class="label-text">Last Name</label>
+                            <input type="text" class="input-field">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="label-text">Date of Birth</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <select class="input-field bg-white text-gray-400"><option>Month</option></select>
+                            <select class="input-field bg-white text-gray-400"><option>Day</option></select>
+                            <select class="input-field bg-white text-gray-400"><option>Year</option></select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="label-text leading-3">Total Gross Annual Income (before tax)</label>
+                            <div class="relative mt-1">
+                                <span class="absolute left-3 top-2.5 text-gray-400 text-sm">$</span>
+                                <input type="text" class="input-field pl-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="label-text leading-3">Monthly Rent or Mortgage Payment</label>
+                            <div class="relative mt-1">
+                                <span class="absolute left-3 top-2.5 text-gray-400 text-sm">$</span>
+                                <input type="text" class="input-field pl-6">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="label-text">Street address</label>
+                        <input type="text" class="input-field">
+                    </div>
+
+                    <div class="flex items-start gap-3 pt-1">
+                        <input type="checkbox" class="mt-1 w-4 h-4 border-gray-300 rounded">
+                        <p class="text-[10px] text-gray-500 leading-normal">I confirm the data above is accurate and consent to Autobon's Terms of Service.</p>
+                    </div>
+
+                    <div class="pt-2">
+                        <p class="text-[9px] text-gray-400 mb-4 leading-relaxed">
+                            By clicking submit, you consent to Autobon <span class="text-blue-500 underline cursor-pointer">Term of Service</span>, <span class="text-blue-500 underline cursor-pointer">Privacy Policy</span>, and allow Autobon to obtain credit reports.
+                        </p>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-lg text-[14px] shadow-lg shadow-blue-200 transition-all active:scale-[0.98]">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer-section">
+            <div class="h-full flex flex-col lg:flex-row items-center justify-between py-6">
+                <div class="text-center lg:text-left">
+                    <p class="text-[10px] text-gray-400 max-w-[500px] leading-relaxed">
+                        Copyright © 2025 Autobon. All rights reserved. Autobon® and the Autobon Logo design are registered trademarks of Autobon Ltd. Other trademarks are the property of their respective owners.
+                    </p>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 text-[10px] text-gray-400 mt-3 font-medium">
+                        <a href="#" class="hover:text-blue-500">Privacy Policy</a> | 
+                        <a href="#" class="hover:text-blue-500">Legal Agreements</a> | 
+                        <a href="#" class="hover:text-blue-500">Website Terms of Use</a> | 
+                        <a href="#" class="hover:text-blue-500">Canada Drives Corporate</a>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4 mt-6 lg:mt-0">
+                    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" class="h-6">
+                    <div class="flex flex-col items-center">
+                        <div class="text-yellow-400 text-lg">★★★★★</div>
+                        <p class="text-[9px] font-extrabold text-gray-500 tracking-tighter uppercase">Over 2500 5 Star Reviews</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
